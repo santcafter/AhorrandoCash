@@ -33,8 +33,8 @@ AZUL='\e[34m' && MAGENTA='\e[35m' && MAG='\033[1;36m' &&NEGRITO='\e[1m' && SEMCO
 ### PAQUETES PRINCIPALES 
 msg -bar
 echo -e "\033[97m"
-echo -e "\033[101m -- INSTALACION DE PAQUETES NECESARIOS PARA VPS-MX -- "
-echo -e "\033[100m  PONER ATENCION A INSTALACION PARA SIGUIENTE PREGUNTA "
+echo -e "\033[41m -- INSTALACION DE PAQUETES NECESARIOS PARA VPS-MX -- "
+echo -e "\033[100m  PONER ATENCION A INSTALACION PARA SIGUIENTE PREGUNTA"
 echo -e "\033[97m"
 msg -bar
 apt-get install grep -y &>/dev/null
@@ -139,21 +139,21 @@ clear
 idfix64_86 () {
 msg -bar2
 echo -e "ENCASO DE PEDIR ALGUNA INSTALACION ESCOJA: y "
-apt-get update; apt-get upgrade 
-apt-get install curl
-apt-get install lsof
-apt-get install sudo
-apt-get install figlet
-apt-get install cowsay
-apt-get install bc
-apt-get install python
+apt-get update; apt-get upgrade -y
+apt-get install curl -y
+apt-get install lsof -y
+apt-get install sudo -y
+apt-get install figlet -y
+apt-get install cowsay -y
+apt-get install bc -y
+apt-get install python -y
 apt-get install at 
 sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf
 service apache2 restart
 clear
 msg -bar2
 echo -e "ESCOJER PRIMERO #All locales# Y LUEGO #en_US.UTF-8# " 
-clear
+sleep 7s
 export LANGUAGE=en_US.UTF-8\
   && export LANG=en_US.UTF-8\
   && export LC_ALL=en_US.UTF-8\
@@ -169,7 +169,7 @@ msg -bar2
 echo -e "\033[1;32m 1- Escoja:(N) No. Para Instalacion Normal"
 echo -e "\033[1;31m 2- Escoja:(S) Si. Saltaron errores."
 msg -bar2
-echo -e "\033[1;39m Al preciona enter continuara la instalacion Normalmente"
+echo -e "\033[1;39m Al preciona enter continuara la instalacion Normal"
 msg -bar2
 read -p " [ S | N ]: " idfix64_86   
 [[ "$idfix64_86" = "s" || "$idfix64_86" = "S" ]] && idfix64_86
