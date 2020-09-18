@@ -19,6 +19,7 @@ rm -rf instalscript.sh
 SCRIPT_NAME=vpsmxup
 
 ## Title and graphics
+msg -bar2
 echo "         VPS-MX - $(date)"
 msg -bar2
 sleep 5s
