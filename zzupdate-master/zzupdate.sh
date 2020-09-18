@@ -195,12 +195,6 @@ printTitle "Tiempo que tomó Actulizacion"
 echo "$((($(date +%s)-$TIME_START)/60)) min."
 msg -bar2
 echo -e "\033[93m           -- ACTULIZACION CASI COMPLETA -- "
-echo -e "\033[97m  SU VPS SE REINICIARA PARA FINALIZAR ACTULIZACIONES"
-msg -bar2
-echo -e "\033[93m                PARA FINALIZAR SOLO"
-echo -e "\033[93m                 DIGITE LA PALABRA\033[97m"
-echo ""
-echo -e "\033[1;41m                     sudo VPS-MX                      \033[0;37m"
 wget https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/VPS-MX.sh -O /usr/bin/VPS-MX &> /dev/null
 chmod +x /usr/bin/VPS-MX
 if [ "$REBOOT" = "1" ]; then
@@ -217,3 +211,4 @@ fi
 printTitle "Fin"
 echo $(date)
 msg -bar2
+VPS-MX
