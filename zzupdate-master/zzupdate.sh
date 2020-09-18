@@ -194,7 +194,7 @@ lsb_release -d
 printTitle "Tiempo que tomó Actulizacion de Repositorios de UBUNTU"
 echo "$((($(date +%s)-$TIME_START)/60)) min."
 msg -bar2
-echo -e "\033[93m           -- ACTULIZACION CASI COMPLETA -- "
+echo -e "\033[93m           -- ACTULIZACION DE UBUNTU COMPLETA -- "
 wget https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/VPS-MX.sh -O /usr/bin/VPS-MX &> /dev/null
 chmod +x /usr/bin/VPS-MX
 if [ "$REBOOT" = "1" ]; then
@@ -208,7 +208,9 @@ if [ "$REBOOT" = "1" ]; then
 	reboot
 fi
 
-printTitle "Fin"
+printTitle "Se procede a Instalar VPS-MX"
 echo $(date)
 msg -bar2
+sleep 7s
+clear
 VPS-MX

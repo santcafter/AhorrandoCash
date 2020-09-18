@@ -32,7 +32,8 @@ AZUL='\e[34m' && MAGENTA='\e[35m' && MAG='\033[1;36m' &&NEGRITO='\e[1m' && SEMCO
 }
 ### PAQUETES PRINCIPALES 
 msg -bar
-echo -e "\033[92m -- FINALIZANDO INSTALACION DE PAQUETES NECESARIOS -- "
+echo -e "\033[101m --  INSTALACION DE PAQUETES NECESARIOS PARA VPS-MX  -- "
+echo -e "\033[100m  PONER ATENCION A INSTALACION PARA SIGUIENTE PREGUNTA "
 msg -bar
 apt-get install grep -y &>/dev/null
 [[ $(dpkg --get-selections|grep -w "grep"|head -1) ]] || ESTATUS=`echo -e "\033[91mFALLO DE INSTALACION"` &>/dev/null
@@ -161,7 +162,7 @@ export LANGUAGE=en_US.UTF-8\
 clear
 }
 msg -bar2
-echo -e "\033[1;97m     ¿APLICAR PARCHES PARA CORREGIR ERRORES?" 
+echo -e "\033[1;97m  ¿PRECENTO ALGUN ERROR ALGUN PAQUETE ANTERIOR?" 
 msg -bar2
 echo -e "\033[1;32m 1- Escoja:(N) Para Instalacion Normal"
 echo -e "\033[1;31m 2- Escoja:(S) Si ya intento instalar el script y\n precento errores, aplique este parche."
