@@ -21,6 +21,7 @@ SCRIPT_NAME=vpsmxup
 ## Title and graphics
 echo "         VPS-MX - $(date)"
 msg -bar2
+sleep 5s
 
 ## Enviroment variables
 TIME_START="$(date +%s)"
@@ -183,15 +184,13 @@ if [ "$SYMFONY_UPGRADE" = "1" ]; then
 	fi
 fi
 
-
-
 printTitle "Limpieza de paquetes (eliminación automática de paquetes no utilizados)"
 apt-get autoremove -y
 
 printTitle "Versión actual"
 lsb_release -d
 
-printTitle "Tiempo que tomó Actulizacion"
+printTitle "Tiempo que tomó Actulizacion de Repositorios de UBUNTU"
 echo "$((($(date +%s)-$TIME_START)/60)) min."
 msg -bar2
 echo -e "\033[93m           -- ACTULIZACION CASI COMPLETA -- "

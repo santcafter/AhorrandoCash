@@ -61,10 +61,8 @@ if [ ! -d "$INSTALL_DIR" ]; then
 else
 	echo ""
 fi
-
-
-	
-sleep 3
+sleep 5
+clear
 ## Restore working directory
 cd $WORKING_DIR_ORIGINAL
 vpsmxup
