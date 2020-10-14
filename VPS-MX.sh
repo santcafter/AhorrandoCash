@@ -37,18 +37,27 @@ echo -e "\033[41m -- INSTALACION DE PAQUETES NECESARIOS PARA VPS-MX -- "
 echo -e "\033[100m  PONER ATENCION A INSTALACION PARA SIGUIENTE PREGUNTA"
 echo -e "\033[97m"
 msg -bar
+#grep
 apt-get install grep -y &>/dev/null
 [[ $(dpkg --get-selections|grep -w "grep"|head -1) ]] || ESTATUS=`echo -e "\033[91mFALLO DE INSTALACION"` &>/dev/null
 [[ $(dpkg --get-selections|grep -w "grep"|head -1) ]] && ESTATUS=`echo -e "\033[92mINSTALADO"` &>/dev/null
 echo -e "\033[97m    # apt-get install grep............ $ESTATUS "
+#net-tools
+apt-get install net-tools -y &>/dev/null
+[[ $(dpkg --get-selections|grep -w "net-tools"|head -1) ]] || ESTATUS=`echo -e "\033[91mFALLO DE INSTALACION"` &>/dev/null
+[[ $(dpkg --get-selections|grep -w "net-tools"|head -1) ]] && ESTATUS=`echo -e "\033[92mINSTALADO"` &>/dev/null
+echo -e "\033[97m    # apt-get install net-tools....... $ESTATUS "
+#gawk
 apt-get install gawk -y &>/dev/null
 [[ $(dpkg --get-selections|grep -w "gawk"|head -1) ]] || ESTATUS=`echo -e "\033[91mFALLO DE INSTALACION"` &>/dev/null
 [[ $(dpkg --get-selections|grep -w "gawk"|head -1) ]] && ESTATUS=`echo -e "\033[92mINSTALADO"` &>/dev/null
 echo -e "\033[97m    # apt-get install gawk............ $ESTATUS "
+#mlocate
 apt-get install mlocate -y &>/dev/null
 [[ $(dpkg --get-selections|grep -w "mlocate"|head -1) ]] || ESTATUS=`echo -e "\033[91mFALLO DE INSTALACION"` &>/dev/null
 [[ $(dpkg --get-selections|grep -w "mlocate"|head -1) ]] && ESTATUS=`echo -e "\033[92mINSTALADO"` &>/dev/null
 echo -e "\033[97m    # apt-get install mlocate......... $ESTATUS "
+#lolcat gem
 apt-get install lolcat -y &>/dev/null
 sudo gem install lolcat &>/dev/null
 [[ $(dpkg --get-selections|grep -w "lolcat"|head -1) ]] || ESTATUS=`echo -e "\033[91mFALLO DE INSTALACION"` &>/dev/null
@@ -133,7 +142,8 @@ echo -e "\033[97m    # apt-get install zip............. $ESTATUS "
 [[ $(dpkg --get-selections|grep -w "apache2"|head -1) ]] || ESTATUS=`echo -e "\033[91mFALLO DE INSTALACION"` &>/dev/null
 [[ $(dpkg --get-selections|grep -w "apache2"|head -1) ]] && ESTATUS=`echo -e "\033[92mINSTALADO"` &>/dev/null
 echo -e "\033[97m    # apt-get install apache2......... $ESTATUS "
-sleep 7s
+msg -bar2
+echo -e "\033[1;39m Preciona Enter Para continuar"
 clear
 ### FIXEADOR PARA SISTEMAS 86_64
 idfix64_86 () {

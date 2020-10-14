@@ -62,7 +62,7 @@ else
 	echo ""
 fi
 sleep 5
-clear
 ## Restore working directory
 cd $WORKING_DIR_ORIGINAL
+clear
 vpsmxup
